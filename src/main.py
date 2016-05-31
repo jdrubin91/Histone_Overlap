@@ -9,7 +9,7 @@ import separate_bidir
 TFdir = '/scratch/Shares/dowell/ENCODE/SVM/IMR90/TF_ChIP-Seq/'
 Histonedir = '/scratch/Shares/dowell/ENCODE/SVM/IMR90/histone_mods/'
 Bidirdir = '/scratch/Shares/dowell/EMG_out_files/human/SRR639050-1_divergent_classifications.bed'
-Genedir = '/scratch/Users/joru1876/hg19_reference_files/refFlat_hg19.bed'
+Genedir = '/scratch/Users/joru1876/hg19_reference_files/RefSeqHG19.txt.bed'
 #############################################################################
 
 
