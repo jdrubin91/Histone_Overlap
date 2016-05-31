@@ -7,8 +7,8 @@ def run(TFdir,Histonedir):
     with open(TFdir + 'metadata.tsv') as F:
         for line in F:
             line = line.strip().split()
-            if line[1] == 'bed' and line[3] == 'peaks' and 'control' not in line[14]:
-                TFdict[line[14]] = TFdir + line[0] + '.sorted.cut'
+            if line[1] == 'bed' and line[3] == 'peaks' and 'control' not in line[15]:
+                TFdict[line[15]] = TFdir + line[0] + '.sorted.cut'
                 
     Histonedict = dict()
     for folder in os.listdir(Histonedir):
