@@ -32,4 +32,4 @@ files = parent_dir(homedir) + '/files/'
 def run():
     TFdict,Histonedict = get_fullpaths.run(TFdir,Histonedir)
     separate_bidir.run(Bidirdir, Genedir, files)
-    print Histonedict
+    print Histonedict,TFdict

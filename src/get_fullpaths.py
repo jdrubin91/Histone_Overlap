@@ -13,6 +13,8 @@ def run(TFdir,Histonedir):
     Histonedict = dict()
     for folder in os.listdir(Histonedir):
         if 'py' not in folder:
-            Histonedict[folder] = Histonedir + folder + '/' + folder + '.intersect.sorted'
+            for file1 in os.listdir(Histonedir + folder):
+                if '.bed' in file1:
+                    Histonedict[folder] = Histonedir + folder + '/' + file1
     
     return TFdict,Histonedict
