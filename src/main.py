@@ -31,9 +31,9 @@ files = parent_dir(homedir) + '/files/'
 #module load bedtools2_2.22.0
 
 def run():
-    separate_bidir.run(Bidirdir, Genedir, files)
+    #separate_bidir.run(Bidirdir, Genedir, files)
     TFdict,Histonedict = get_fullpaths.run(TFdir,Histonedir)
-    results = calculate_results.run(TFdict,Histonedict,files)
+    results = calculate_results.run(TFdict,Histonedict,Bidirdir,Genedir,files)
     
     
     print results
