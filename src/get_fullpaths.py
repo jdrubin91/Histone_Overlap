@@ -8,7 +8,7 @@ def run(TFdir,Histonedir):
         for line in F:
             line = line.strip().split()
             if line[1] == 'bed' and line[3] == 'peaks' and 'control' not in line[15]:
-                TFdict[line[15]] = TFdir + line[0] + '.sorted.cut'
+                TFdict[line[15]] = TFdir + line[0] + '.bed.sorted.cut'
                 
     Histonedict = dict()
     for folder in os.listdir(Histonedir):
