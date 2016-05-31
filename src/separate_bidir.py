@@ -9,7 +9,7 @@ def run(Bidirdir, Genedir, files):
     Enhancer = list()
     with open(files + "Bidir_intersect.bed") as F:
         for line in F:
-            if line.strip().split()[-1] is 0:
+            if line.strip().split()[-1] == 0:
                 Enhancer.append(line)
             else:
                 TSS.append(line)
