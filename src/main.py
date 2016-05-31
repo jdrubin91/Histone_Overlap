@@ -3,6 +3,7 @@ __author__ = 'Jonathan Rubin'
 import os
 import get_fullpaths
 import separate_bidir
+import calculate_results
 
 #User Input
 #############################################################################
@@ -32,5 +33,7 @@ files = parent_dir(homedir) + '/files/'
 def run():
     separate_bidir.run(Bidirdir, Genedir, files)
     TFdict,Histonedict = get_fullpaths.run(TFdir,Histonedir)
+    results = calculate_results.run(TFdict,Histonedict,files)
     
-    print Histonedict,TFdict
+    
+    print results
