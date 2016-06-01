@@ -4,7 +4,9 @@ import os
 
 def run(TFdict,Histonedict,Bidirdir,Genedir,files):
     results = dict()    
+    overlap = list()
     for TF in TFdict:
+        print TF
         TFdir = TFdict[TF]
         os.system("bedtools intersect -c -a " + TFdir + " -b " + Bidirdir + " > " + files + "TF_bidir_intersect.bed")
         pos = list()
@@ -15,6 +17,7 @@ def run(TFdict,Histonedict,Bidirdir,Genedir,files):
                     neg.append(line)
                 else:
                     pos.append(line)
+        overlap.append(float(len(pos))/float(len(pos)+len(neg)))
         outfile1 = open(files + "TF_posbidir_intersect.bed",'w')
         for line in pos:
             outfile1.write(line)
@@ -64,6 +67,7 @@ def run(TFdict,Histonedict,Bidirdir,Genedir,files):
         
         
         for mod in Histonedict:
+            print mod
             if mod not in results:
                 results[mod] = list()
             os.system("bedtools intersect -c -a " + files + "TF_posbidir_TSS_intersect.bed" + " -b " + Histonedict[mod] + " > " + files + "Histone_TF_Enhancer_bidir_intersect_pos.bed")
@@ -97,6 +101,11 @@ def run(TFdict,Histonedict,Bidirdir,Genedir,files):
                 outfile3.write(val + ',')
             outfile3.write("]")
         outfile3.write("}")
+    outfile3.write('\n')
+    outfile3.write('[')
+    for item in overlap:
+        outfile3.write(item + ',')
+        
         
     return results
         
