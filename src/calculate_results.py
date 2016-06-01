@@ -86,6 +86,17 @@ def run(TFdict,Histonedict,Bidirdir,Genedir,files):
                             total += 1.0
                 resultlist.append(pos/total)
             results[mod].append(resultlist)
+            
+    outfile3 = open(files+'results.txt','w')
+    for key in results:
+        outfile3.write("{'")
+        outfile3.write(key + "': [")
+        for item in results[key]:
+            outfile3.write("[")
+            for val in item:
+                outfile3.write(val + ',')
+            outfile3.write("]")
+        outfile3.write("}")
         
     return results
         
