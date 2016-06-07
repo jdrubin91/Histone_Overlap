@@ -30,6 +30,7 @@ files = parent_dir(homedir) + '/files/'
 
 #Requires the following modules:
 #module load bedtools2_2.22.0
+#module load matplotlib_1.3.1
 
 def run():
     separate_bidir.run(Bidirdir, Genedir, files)
