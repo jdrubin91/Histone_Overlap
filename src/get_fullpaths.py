@@ -9,12 +9,22 @@ def run(TFdir,Histonedir):
             line = line.strip().split()
             if line[1] == 'bed' and line[3] == 'peaks' and 'control' not in line[15]:
                 TFdict[line[15]] = TFdir + line[0] + '.bed.sorted.cut'
-                
+    
+    #Used in IMR90 cell type (roadmap) where data is structure in folder for each Histone Modification            
+    #Histonedict = dict()
+    #for folder in os.listdir(Histonedir):
+    #    if 'py' not in folder:
+    #        for file1 in os.listdir(Histonedir + folder):
+    #            if '.bed' in file1:
+    #                Histonedict[folder] = Histonedir + folder + '/' + file1
+    
     Histonedict = dict()
-    for folder in os.listdir(Histonedir):
-        if 'py' not in folder:
-            for file1 in os.listdir(Histonedir + folder):
-                if '.bed' in file1:
-                    Histonedict[folder] = Histonedir + folder + '/' + file1
+    with open(Histonedir + 'metadata.tsv') as F:
+        for line in F:
+            line = line.strip().split()
+            if line[3] == 'optimal' and 'human' in line[18]:
+                TF = line[18]
+                Histonedict[TF] = Histonedir + line[0] + '.bed.sorted.cut'
+    
     
     return TFdict,Histonedict

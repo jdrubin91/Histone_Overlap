@@ -76,7 +76,7 @@ def run(TFdict,Histonedict,Bidirdir,Genedir,files):
             os.system("bedtools intersect -c -a " + files + "TF_negbidir_Enhancer_intersect.bed" + " -b " + Histonedict[mod] + " > " + files + "Histone_TF_TSS_bidir_intersect_neg.bed")
             
             filelist = ["Histone_TF_Enhancer_bidir_intersect_pos.bed","Histone_TF_Enhancer_bidir_intersect_neg.bed","Histone_TF_TSS_bidir_intersect_pos.bed","Histone_TF_TSS_bidir_intersect_neg.bed"]
-            resultlist = list()
+            resultlist = [TF]
             for filename in filelist:
                 filename = files + filename
                 total = 0
