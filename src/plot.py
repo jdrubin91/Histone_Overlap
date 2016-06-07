@@ -11,7 +11,7 @@ def run(files):
     with open(resultpath) as F:
         line = F.readline().strip()
         #print line
-        results = eval("'" + line + "'")
+        results = eval('"' + line + '"')
     print results
     #for mod in results:
     #    list1 = [[],[],[],[]]
