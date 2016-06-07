@@ -4,6 +4,7 @@ import os
 import get_fullpaths
 import separate_bidir
 import calculate_results
+import plot
 
 #User Input
 #############################################################################
@@ -31,9 +32,10 @@ files = parent_dir(homedir) + '/files/'
 #module load bedtools2_2.22.0
 
 def run():
-    #separate_bidir.run(Bidirdir, Genedir, files)
+    separate_bidir.run(Bidirdir, Genedir, files)
     TFdict,Histonedict = get_fullpaths.run(TFdir,Histonedir)
     results = calculate_results.run(TFdict,Histonedict,Bidirdir,Genedir,files)
+    plot.run(results,files)
     
     
     print results
