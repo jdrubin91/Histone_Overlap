@@ -9,7 +9,9 @@ import matplotlib.pyplot as plt
 def run(files):
     resultpath = files + 'results.txt'
     with open(resultpath) as F:
-        results = eval(F.readline())
+        line = F.readline()
+        print line
+        results = eval(line)
     print results
     #for mod in results:
     #    list1 = [[],[],[],[]]
