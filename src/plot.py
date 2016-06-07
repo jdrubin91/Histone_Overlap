@@ -14,7 +14,7 @@ def run(files):
         for line in F:
             line = line.strip()
             if '#' in line[0]:
-                mod = line[1:-1]
+                mod = line[1:]
                 results[mod] = list()
             else:
                 line = line.split()                    
