@@ -102,7 +102,7 @@ def run(TFdict,Histonedict,Bidirdir,Genedir,files):
             outfile3.write("[")
             for val in item:
                 outfile3.write(str(val) + ',')
-            outfile3.write("]")
+            outfile3.write("],")
         outfile3.write("}")
     outfile3.write('\n')
     outfile3.write('[')
