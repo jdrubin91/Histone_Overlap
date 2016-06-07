@@ -6,7 +6,10 @@ from matplotlib import rcParams
 rcParams.update({'figure.autolayout': True})
 import matplotlib.pyplot as plt
 
-def run(results,files):
+def run(files):
+    results = files + 'results.txt'
+    with open(results) as F:
+        results = eval(F.readline())
     for mod in results:
         list1 = [[],[],[],[]]
         for items in results[mod]:

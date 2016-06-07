@@ -33,10 +33,7 @@ files = parent_dir(homedir) + '/files/'
 #module load matplotlib_1.3.1
 
 def run():
-    separate_bidir.run(Bidirdir, Genedir, files)
-    TFdict,Histonedict = get_fullpaths.run(TFdir,Histonedir)
-    results = calculate_results.run(TFdict,Histonedict,Bidirdir,Genedir,files)
-    plot.run(results,files)
-    
-    
-    print results
+    #separate_bidir.run(Bidirdir, Genedir, files)
+    #TFdict,Histonedict = get_fullpaths.run(TFdir,Histonedir)
+    #calculate_results.run(TFdict,Histonedict,Bidirdir,Genedir,files)
+    plot.run(files)
