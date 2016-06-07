@@ -100,6 +100,7 @@ def run(TFdict,Histonedict,Bidirdir,Genedir,files):
         for item in results[key]:
             for val in item:
                 outfile3.write(str(val) + '\t')
+            outfile3.write('\n')
     for item in overlap:
         outfile3.write(str(item) + ',')
         
