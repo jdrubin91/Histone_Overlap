@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 def run(files):
     resultpath = files + 'results.txt'
     with open(resultpath) as F:
-        line = F.readline()
+        line = F.readline().strip()
         print line
         results = eval(line)
     print results
