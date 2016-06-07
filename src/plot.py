@@ -8,10 +8,16 @@ import matplotlib.pyplot as plt
 
 def run(files):
     resultpath = files + 'results.txt'
+    results = dict()
+    mod = 'none'
     with open(resultpath) as F:
-        line = F.readline().strip()
-        #print line
-        results = eval('"' + line + '"')
+        for line in F:
+            line = line.strip()
+            if '#' in line[0]:
+                mod = line[1:-1]
+                results[mod] = list()
+            else:
+                results[mod] = eval(line)
     print results
     for mod in results:
         list1 = [[],[],[],[]]

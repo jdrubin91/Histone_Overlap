@@ -96,16 +96,12 @@ def run(TFdict,Histonedict,Bidirdir,Genedir,files):
             
     outfile3 = open(files+'results.txt','w')
     for key in results:
-        outfile3.write("{'")
-        outfile3.write(key + "': [")
+        outfile3.write("#" + key + "\n")
         for item in results[key]:
             outfile3.write("[")
             for val in item:
                 outfile3.write(str(val) + ',')
-            outfile3.write("],")
-        outfile3.write("}")
-    outfile3.write('\n')
-    outfile3.write('[')
+            outfile3.write("]\n")
     for item in overlap:
         outfile3.write(str(item) + ',')
         
