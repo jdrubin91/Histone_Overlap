@@ -7,8 +7,8 @@ def run(TFdir,Histonedir):
     with open(TFdir + 'metadata.tsv') as F:
         for line in F:
             line = line.strip().split()
-            if line[3] == 'peaks' and line[15] != 'interferon' and 'human' in line[17]:
-                TFdict[line[18]] = TFdir + line[0] + '.bed.sorted.cut'
+            if line[3] == 'peaks' and line[15] != 'interferon':
+                TFdict[line[15]] = TFdir + line[0] + '.bed.sorted.cut'
     
     #Used in IMR90 cell type (roadmap) where data is structure in folder for each Histone Modification            
     #Histonedict = dict()
