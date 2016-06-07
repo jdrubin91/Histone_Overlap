@@ -7,9 +7,9 @@ import calculate_results
 
 #User Input
 #############################################################################
-TFdir = '/scratch/Shares/dowell/ENCODE/SVM/IMR90/TF_ChIP-Seq/'
-Histonedir = '/scratch/Shares/dowell/ENCODE/SVM/IMR90/histone_mods/'
-Bidirdir = '/scratch/Shares/dowell/EMG_out_files/human/SRR639050-1_divergent_classifications.bed'
+TFdir = '/scratch/Shares/dowell/ENCODE/SVM/K562/TF_ChIP-Seq/'
+Histonedir = '/scratch/Shares/dowell/ENCODE/SVM/K562/histone_mods/'
+Bidirdir = '/scratch/Shares/dowell/EMG_out_files/human/SRR1552480-1_divergent_classifications.bed'
 Genedir = '/scratch/Users/joru1876/hg19_reference_files/RefSeqHG19.txt.bed'
 #############################################################################
 
