@@ -22,7 +22,7 @@ def run(TFdir,Histonedir):
     with open(Histonedir + 'metadata.tsv') as F:
         for line in F:
             line = line.strip().split()
-            if line[2] == 'narrowPeak' and 'human' in line[18]:
+            if line[2] == 'narrowPeak':
                 Histonedict[line[15]] = Histonedir + line[0] + '.bed.sorted.cut'
     
     
