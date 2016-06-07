@@ -88,7 +88,10 @@ def run(TFdict,Histonedict,Bidirdir,Genedir,files):
                         else:
                             pos += 1.0
                             total += 1.0
-                resultlist.append(pos/total)
+                if total == 0:
+                    resultlist.append(0)
+                else:
+                    resultlist.append(pos/total)
             results[mod].append(resultlist)
             
     outfile3 = open(files+'results.txt','w')
