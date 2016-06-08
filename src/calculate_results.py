@@ -34,9 +34,9 @@ def run(TFdict,Histonedict,Bidirdir,Genedir,files):
         with open(files + "TF_posbidir_gene_intersect.bed") as F:
             for line in F:
                 if line.strip().split()[-1] == '0':
-                    TSS.append(line)
-                else:
                     Enhancer.append(line)
+                else:
+                    TSS.append(line)
         outfile1 = open(files + "TF_posbidir_TSS_intersect.bed",'w')
         for line in TSS:
             outfile1.write(line)
