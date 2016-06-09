@@ -5,6 +5,7 @@ matplotlib.use('Agg')
 from matplotlib import rcParams
 rcParams.update({'figure.autolayout': True})
 import matplotlib.pyplot as plt
+from scipy import stats
 
 def run(files):
     resultpath = files + 'results.txt'
@@ -27,8 +28,21 @@ def run(files):
             list1[1].append(items[2])
             list1[2].append(items[3])
             list1[3].append(items[4])
+        
+        test1 = list()
+        test2 = list()
+        for i in range(len(list1[0])):
+            test1.append(list1[0][i] - list1[2][i])
+            test2.append(list1[1][i] - list1[3][i])
             
-            
+        z_score1 = stats.zscore(test1)
+        z_score2 = stats.zscore(test2)
+        
+        p_values1 = stats.norm.sf(abs(z_score1))*2
+        p_values2 = stats.norm.sf(abs(z_score2))*2
+        
+        print p_values1,p_values2
+        
         F = plt.figure()
         ax1 = F.add_subplot(1,1,1)
         bp1 = ax1.boxplot(list1,patch_artist=True)
